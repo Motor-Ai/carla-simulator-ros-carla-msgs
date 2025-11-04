@@ -1,0 +1,33 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from carla_msgs/msg/CarlaVehicleTelemetryData.msg
+// generated code does not contain a copyright notice
+
+#include "carla_msgs/msg/CarlaVehicleTelemetryDataWheel.idl"
+#include "std_msgs/msg/Header.idl"
+
+module carla_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "This work is licensed under the terms of the MIT license." "\n"
+      "For a copy, see <https://opensource.org/licenses/MIT>.")
+    struct CarlaVehicleTelemetryData {
+      std_msgs::msg::Header header;
+
+      float speed;
+
+      float steer;
+
+      float throttle;
+
+      float brake;
+
+      float engine_rpm;
+
+      int32 gear;
+
+      float drag;
+
+      sequence<carla_msgs::msg::CarlaVehicleTelemetryDataWheel> wheels;
+    };
+  };
+};

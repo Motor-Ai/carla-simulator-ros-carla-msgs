@@ -29,6 +29,8 @@ set(MSG_FILES
     CarlaVehicleControl.msg
     CarlaVehicleInfo.msg
     CarlaVehicleInfoWheel.msg
+    CarlaVehicleTelemetryData.msg
+    CarlaVehicleTelemetryDataWheel.msg
     CarlaVehicleControlStatus.msg
     CarlaLaneInvasionEvent.msg
     CarlaStatus.msg
