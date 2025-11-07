@@ -5,8 +5,12 @@
 # For a copy, see <https://opensource.org/licenses/MIT>.
 #
 
+std_msgs/Header header
+
+carla_msgs/CarlaEpisodeSettings episode_settings
+
 uint64 frame                  # frame number
 
-float32 fixed_delta_seconds   # duration of one frame
-bool synchronous_mode         # carla is in synchronous mode
-bool synchronous_mode_running # true: running, false: paused
+carla_msgs/CarlaSynchronizationWindowParticipantState[] synchronous_mode_participant_states
+bool game_running # true: running, false: paused
+

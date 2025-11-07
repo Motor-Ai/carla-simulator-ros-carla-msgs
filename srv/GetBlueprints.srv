@@ -6,4 +6,4 @@
 #
 string filter
 ---
-string[] blueprints
+carla_msgs/CarlaActorBlueprint[] blueprints

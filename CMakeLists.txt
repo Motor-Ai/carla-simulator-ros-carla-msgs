@@ -1,46 +1,70 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 2.8.12)
 project(carla_msgs)
 
 find_package(ros_environment REQUIRED)
 
 set(ROS_VERSION $ENV{ROS_VERSION})
+if (NOT ROS_VERSION)
+  message(FATAL_ERROR "ROS_VERSION not set. Please source the respective ROS environment before building this component")
+  return()
+endif()
 
-set(SERVICE_FILES SpawnObject.srv DestroyObject.srv GetBlueprints.srv)
+set(SERVICE_FILES
+    DestroyObject.srv
+    GetAvailableMaps.srv
+    GetBlueprints.srv
+    LoadMap.srv
+    SetEpisodeSettings.srv
+    SpawnObject.srv
+    )
 
 set(MSG_FILES
-    CarlaBoundingBox.msg
-    CarlaEgoVehicleControl.msg
-    CarlaEgoVehicleStatus.msg
-    CarlaEgoVehicleInfoWheel.msg
-    CarlaEgoVehicleInfo.msg
-    CarlaCollisionEvent.msg
-    CarlaLaneInvasionEvent.msg
-    CarlaWorldInfo.msg
+    CarlaActorBlueprint.msg
     CarlaActorInfo.msg
     CarlaActorList.msg
+    CarlaBoundingBox.msg
+    CarlaCollisionEvent.msg
     CarlaControl.msg
+    CarlaEpisodeSettings.msg
+    CarlaEgoVehicleControl.msg
+    CarlaEgoVehicleInfo.msg
+    CarlaEgoVehicleInfoWheel.msg
+    CarlaEgoVehicleTelemetryData.msg
+    CarlaEgoVehicleTelemetryDataWheel.msg
+    CarlaEgoVehicleStatus.msg
+    CarlaLaneInvasionEvent.msg
     CarlaStatus.msg
     CarlaTrafficLightInfo.msg
     CarlaTrafficLightInfoList.msg
     CarlaTrafficLightStatus.msg
     CarlaTrafficLightStatusList.msg
+    CarlaSynchronizationWindow.msg
+    CarlaSynchronizationWindowParticipantState.msg
+    CarlaV2XByteArray.msg
+    CarlaV2XCustomData.msg
+    CarlaV2XCustomDataList.msg
+    CarlaV2XCustomMessage.msg
+    CarlaV2XData.msg
+    CarlaV2XDataList.msg
     CarlaWalkerControl.msg
-    CarlaWeatherParameters.msg)
+    CarlaWeatherParameters.msg
+    CarlaWorldInfo.msg
+    )
 
 if(${ROS_VERSION} EQUAL 1)
   cmake_minimum_required(VERSION 2.8.3)
 
   # Find catkin macros and libraries
   find_package(catkin REQUIRED COMPONENTS message_generation std_msgs
-                                          geometry_msgs diagnostic_msgs)
+                                          geometry_msgs diagnostic_msgs shape_msgs ackermann_msgs etsi_its_cam_msgs)
 
   add_service_files(DIRECTORY srv FILES ${SERVICE_FILES})
 
   add_message_files(DIRECTORY msg FILES ${MSG_FILES})
 
-  generate_messages(DEPENDENCIES std_msgs geometry_msgs diagnostic_msgs)
+  generate_messages(DEPENDENCIES std_msgs geometry_msgs diagnostic_msgs shape_msgs ackermann_msgs etsi_its_cam_msgs)
 
-  catkin_package(CATKIN_DEPENDS message_runtime std_msgs geometry_msgs diagnostic_msgs)
+  catkin_package(CATKIN_DEPENDS message_runtime std_msgs geometry_msgs diagnostic_msgs shape_msgs ackermann_msgs etsi_its_cam_msgs)
 
 elseif(${ROS_VERSION} EQUAL 2)
 
@@ -58,8 +82,11 @@ elseif(${ROS_VERSION} EQUAL 2)
   find_package(ament_cmake REQUIRED)
   find_package(builtin_interfaces REQUIRED)
   find_package(std_msgs REQUIRED)
+  find_package(shape_msgs REQUIRED)
   find_package(geometry_msgs REQUIRED)
+  find_package(ackermann_msgs REQUIRED)
   find_package(diagnostic_msgs REQUIRED)
+  find_package(etsi_its_cam_msgs REQUIRED)
   find_package(rosidl_default_generators REQUIRED)
 
   # Apend "msg/" to each file name
@@ -83,8 +110,11 @@ elseif(${ROS_VERSION} EQUAL 2)
     DEPENDENCIES
     builtin_interfaces
     std_msgs
+    shape_msgs
     geometry_msgs
+    ackermann_msgs
     diagnostic_msgs
+    etsi_its_cam_msgs
     ADD_LINTER_TESTS)
 
   ament_export_dependencies(rosidl_default_runtime)

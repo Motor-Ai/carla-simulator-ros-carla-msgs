@@ -1,9 +1,10 @@
 #
-# Copyright (c) 2019 Intel Corporation.
+# Copyright (c) 2024 Intel Corporation.
 #
 # This work is licensed under the terms of the MIT license.
 # For a copy, see <https://opensource.org/licenses/MIT>.
 #
 
-carla_msgs/CarlaActorInfo[] actors
+etsi_its_cam_msgs/ItsPduHeader header
+carla_msgs/CarlaV2XByteArray data
 

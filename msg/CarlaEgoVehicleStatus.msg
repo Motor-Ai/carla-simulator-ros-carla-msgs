@@ -11,5 +11,11 @@ float32 velocity
 geometry_msgs/Accel acceleration
 geometry_msgs/Quaternion orientation
 
+# the control type values
+uint8 VEHICLE_CONTROL=0
+uint8 ACKERMANN_CONTROL=1
+
 # the current control values, as reported by Carla
-CarlaEgoVehicleControl control
+uint8 active_control_type
+carla_msgs/CarlaEgoVehicleControl last_applied_vehicle_control
+ackermann_msgs/AckermannDriveStamped last_applied_ackermann_control

@@ -1,0 +1,35 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from carla_msgs/msg/CarlaEgoVehicleTelemetryDataWheel.msg
+// generated code does not contain a copyright notice
+
+
+module carla_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "This work is licensed under the terms of the MIT license." "\n"
+      "For a copy, see <https://opensource.org/licenses/MIT>.")
+    struct CarlaEgoVehicleTelemetryDataWheel {
+      float tire_friction;
+
+      float lat_slip;
+
+      float long_slip;
+
+      float omega;
+
+      float tire_load;
+
+      float normalized_tire_load;
+
+      float torque;
+
+      float long_force;
+
+      float lat_force;
+
+      float normalized_long_force;
+
+      float normalized_lat_force;
+    };
+  };
+};
