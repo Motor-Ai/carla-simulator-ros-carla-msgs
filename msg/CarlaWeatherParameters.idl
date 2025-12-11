@@ -12,23 +12,47 @@ module carla_msgs {
       "This work is licensed under the terms of the MIT license." "\n"
       "For a copy, see <https://opensource.org/licenses/MIT>.")
     struct CarlaWeatherParameters {
+      @default (value=0.0)
       float cloudiness;
 
+      @default (value=0.0)
       float precipitation;
 
+      @default (value=0.0)
       float precipitation_deposits;
 
+      @default (value=0.0)
       float wind_intensity;
 
-      float fog_density;
-
-      float fog_distance;
-
-      float wetness;
-
+      @default (value=0.0)
       float sun_azimuth_angle;
 
+      @default (value=0.0)
       float sun_altitude_angle;
+
+      @default (value=0.0)
+      float fog_density;
+
+      @default (value=0.0)
+      float fog_distance;
+
+      @default (value=0.0)
+      float fog_falloff;
+
+      @default (value=0.0)
+      float wetness;
+
+      @default (value=0.0)
+      float scattering_intensity;
+
+      @default (value=0.0)
+      float mie_scattering_scale;
+
+      @default (value=0.0331)
+      float rayleigh_scattering_scale;
+
+      @default (value=0.0)
+      float dust_storm;
     };
   };
 };
