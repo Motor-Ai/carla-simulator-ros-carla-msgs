@@ -5,7 +5,6 @@
 
 #include "carla_msgs/msg/CarlaEgoVehicleInfoWheel.idl"
 #include "geometry_msgs/msg/Vector3.idl"
-#include "shape_msgs/msg/SolidPrimitive.idl"
 
 module carla_msgs {
   module msg {
@@ -44,10 +43,6 @@ module carla_msgs {
       float drag_coefficient;
 
       geometry_msgs::msg::Vector3 center_of_mass;
-
-      @verbatim (language="comment", text=
-        "A shape conforming to the outer mesh of the vehicle")
-      shape_msgs::msg::SolidPrimitive shape;
     };
   };
 };

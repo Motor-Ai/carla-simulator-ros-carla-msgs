@@ -5,5 +5,6 @@
 # For a copy, see <https://opensource.org/licenses/MIT>.
 #
 
+string carla_version
 string map_name
 string opendrive

@@ -20,5 +20,3 @@ float32 clutch_strength
 float32 mass
 float32 drag_coefficient
 geometry_msgs/Vector3 center_of_mass
-# A shape conforming to the outer mesh of the vehicle
-shape_msgs/SolidPrimitive shape

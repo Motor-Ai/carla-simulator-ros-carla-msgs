@@ -3,7 +3,6 @@
 // generated code does not contain a copyright notice
 #pragma once
 
-
 module carla_msgs {
   module msg {
     @verbatim (language="comment", text=
@@ -12,6 +11,8 @@ module carla_msgs {
       "This work is licensed under the terms of the MIT license." "\n"
       "For a copy, see <https://opensource.org/licenses/MIT>.")
     struct CarlaWorldInfo {
+      string carla_version;
+
       string map_name;
 
       string opendrive;
