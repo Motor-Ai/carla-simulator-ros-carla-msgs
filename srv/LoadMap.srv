@@ -19,7 +19,7 @@ uint16 MAPLAYERFLAG_WALLS           =  256
 uint16 MAPLAYERFLAG_ALL             =  65535
 
 string mapname
-# If the map was already loaded, per default nothing is done (resulting in a success=false response). By setting force_reload to \c True this behavior can be changed.
+# If the map was already loaded, per default nothing is done (resulting in a success=false response). By setting force_reload to True this behavior can be changed.
 bool force_reload    False
 # Should the episode settings be reset to the default
 bool reset_episode_settings  True
