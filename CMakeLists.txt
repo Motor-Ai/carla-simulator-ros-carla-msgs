@@ -11,6 +11,7 @@ endif()
 
 set(SERVICE_FILES
     DestroyObject.srv
+    EnvironmentObject.srv
     GetAvailableMaps.srv
     GetBlueprints.srv
     LoadMap.srv
