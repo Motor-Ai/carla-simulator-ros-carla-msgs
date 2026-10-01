@@ -13,3 +13,4 @@ float32 long_force
 float32 lat_force
 float32 normalized_long_force
 float32 normalized_lat_force
+float32 steer_angle
